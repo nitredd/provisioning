@@ -19,7 +19,8 @@ export PATH=$PATH:~/.local/m/versions/${MONGOD_VERSION}:~/.local/m/tools/version
 
 EXPORT_PATH_STATEMENT=$(cat <<EOF
 export PATH=$PATH:~/.local/m/versions/${MONGOD_VERSION}:~/.local/m/tools/versions/${MONGOTOOLS_VERSION}/bin:~/.local/m/shell/versions/${MONGOSH_VERSION}/bin  # ~/.local/m/versions/${MONGOD_VERSION}/bin
-EOF)
+EOF
+)
 echo "$EXPORT_PATH_STATEMENT" >> ~/.bashrc
 
 sudo apt install -y python3-pip
