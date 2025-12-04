@@ -21,7 +21,7 @@ sudo apt install -y python3-pip
 sudo pip3 install mtools psutil pymongo --break-system-packages  # Thomas Rucksteiss' mtools
 
 mkdir playground; cd $_
-mlaunch --single
+# mlaunch --single
 # mlaunch --replicaset --nodes 2 --arbiter
 # mlaunch --replicaset --nodes 1 --sharded 3
 # mlaunch --replicaset --nodes 1 --sharded tic tac toe
