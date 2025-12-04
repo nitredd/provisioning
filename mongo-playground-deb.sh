@@ -6,13 +6,16 @@ sudo npm install -g m  # Aaron Heckmann's verion manager
 
 MONGOD_VERSION=`m --stable`  # 8.0.15
 MONGOSH_VERSION=2.5.9
+MONGOTOOLS_VERSION=100.13.0
 
 echo "y" | m $MONGOD_VERSION  # Non-interactively install the MongoDB version
 echo "y" | m mongosh $MONGOSH_VERSION  # Non-interactively install the Mongo Shell version
+echo "y" | m tools $MONGOTOOLS_VERSION
 
 alias mongod="m use $MONGOD_VERSION"
 alias mongosh="m shell $MONGOSH_VERSION"
-export PATH=$PATH:`m bin $MONGOD_VERSION`
+
+export PATH=$PATH:`m bin $MONGOD_VERSION`:~/.local/m/tools/versions/${MONGOTOOLS_VERSION}/bin:~/.local/m/shell/versions/${MONGOSH_VERSION}/bin  # ~/.local/m/versions/${MONGOD_VERSION}/bin
 
 sudo apt install -y python3-pip
 sudo pip3 install mtools psutil pymongo --break-system-packages  # Thomas Rucksteiss' mtools
